@@ -29,6 +29,17 @@ object Equalities {
         case _ => a === b
       }
 
+  implicit def eqMap[K: Equality, V: Equality]: Equality[Map[K, V]] =
+    (a: Map[K, V], b: Any) =>
+      b match {
+        case m: Map[_, _] =>
+          // a == m
+          if (a.keys === m.keys) {
+            a.values === m.values
+          } else false
+        case _ => a === b
+      }
+
   implicit val eqInstant: Equality[Instant] = (a: Instant, b: Any) =>
     b match {
       case x: Instant => x.compareTo(a) === 0
