@@ -33,7 +33,7 @@ private[syntax] trait ArrayColumns {
     * Creates a new array column. The input columns must all have the same data type.
     *
     * @group Array Type
-    * @see [[org.apache.spark.sql.functions.array]]
+    * @see [[org.apache.spark.sql.functions.array(cols:org\.apache\.spark\.sql\.Column*)* org.apache.spark.sql.functions.array]]
     */
   def array[T](cols: DoricColumn[T]*): ArrayColumn[T] =
     cols.toList.traverse(_.elem).map(f.array(_: _*)).toDC
@@ -80,7 +80,6 @@ private[syntax] trait ArrayColumns {
       *   the type of the array elements to return.
       * @return
       *   the column reference with the applied transformation.
-      * @see [[org.apache.spark.sql.functions.transform]]
       */
     def transform[A](
         fun: DoricColumn[T] => DoricColumn[A]
@@ -101,7 +100,6 @@ private[syntax] trait ArrayColumns {
       *   the type of the elements of the array
       * @return
       *   the column reference with the provided transformation.
-      * @see [[org.apache.spark.sql.functions.transform]]
       */
     def transformWithIndex[A](
         fun: (DoricColumn[T], IntegerColumn) => DoricColumn[A]
@@ -151,7 +149,6 @@ private[syntax] trait ArrayColumns {
       *   type of the transformed values.
       * @return
       *   the column reference with the applied transformation.
-      * @see [[org.apache.spark.sql.functions.aggregate]]
       */
     def aggregate[A](
         zero: DoricColumn[A]
@@ -170,7 +167,7 @@ private[syntax] trait ArrayColumns {
       *   the condition to filter.
       * @return
       *   the column reference with the filter applied.
-      * @see [[org.apache.spark.sql.functions.filter]]
+      * @see [[org.apache.spark.sql.functions.filter(column:org\.apache\.spark\.sql\.Column,f:org\.apache\.spark\.sql\.Column=>org\.apache\.spark\.sql\.Column)* org.apache.spark.sql.functions.filter]]
       */
     def filter(function: DoricColumn[T] => BooleanColumn): ArrayColumn[T] =
       (col.elem, function(x).elem)
@@ -187,7 +184,7 @@ private[syntax] trait ArrayColumns {
       *   (col, index) => predicate, the Boolean predicate to filter the input column
       *   given the index. Indices start at 0.
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.filter]]
+      * @see [[org.apache.spark.sql.functions.filter(column:org\.apache\.spark\.sql\.Column,f:(org\.apache\.spark\.sql\.Column,org\.apache\.spark\.sql\.Column)=>org\.apache\.spark\.sql\.Column)* org.apache.spark.sql.functions.filter]]
       */
     def filterWIndex(
         function: (DoricColumn[T], IntegerColumn) => BooleanColumn
@@ -243,7 +240,6 @@ private[syntax] trait ArrayColumns {
       * `nullReplacement`.
       *
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.array_join]]
       */
     def join(
         delimiter: StringColumn,
@@ -259,7 +255,6 @@ private[syntax] trait ArrayColumns {
       * Concatenates the elements of `column` using the `delimiter`. Nulls are deleted
       *
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.array_join]]
       */
     def join(delimiter: StringColumn): StringColumn =
       (col.elem, delimiter.elem)
@@ -328,7 +323,6 @@ private[syntax] trait ArrayColumns {
       * Null elements will be placed at the beginning of the returned array.
       *
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.sort_array]]
       */
     def sortAscNullsFirst: ArrayColumn[T] = col.elem.map(f.sort_array).toDC
 
@@ -339,7 +333,6 @@ private[syntax] trait ArrayColumns {
       * at the end of the returned array in descending order.
       *
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.sort_array]]
       */
     def sort(asc: BooleanColumn): ArrayColumn[T] =
       (col.elem, asc.elem)
@@ -474,7 +467,6 @@ private[syntax] trait ArrayColumns {
       * @note
       *   if `start` == 0 an exception will be thrown
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.slice]]
       */
     def slice(start: IntegerColumn, length: IntegerColumn): ArrayColumn[T] =
       (col.elem, start.elem, length.elem).mapN(f.slice).toDC
