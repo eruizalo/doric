@@ -125,7 +125,6 @@ private[syntax] trait ArrayColumns {
       *   type of the final value to return
       * @return
       *   the column reference with the applied transformation.
-      * @see [[org.apache.spark.sql.functions.aggregate]]
       */
     def aggregateWT[A, B](zero: DoricColumn[A])(
         merge: (DoricColumn[A], DoricColumn[T]) => DoricColumn[A],
@@ -167,7 +166,6 @@ private[syntax] trait ArrayColumns {
       *   the condition to filter.
       * @return
       *   the column reference with the filter applied.
-      * @see [[org.apache.spark.sql.functions.filter(column:org\.apache\.spark\.sql\.Column,f:org\.apache\.spark\.sql\.Column=>org\.apache\.spark\.sql\.Column)* org.apache.spark.sql.functions.filter]]
       */
     def filter(function: DoricColumn[T] => BooleanColumn): ArrayColumn[T] =
       (col.elem, function(x).elem)
@@ -184,7 +182,6 @@ private[syntax] trait ArrayColumns {
       *   (col, index) => predicate, the Boolean predicate to filter the input column
       *   given the index. Indices start at 0.
       * @group Array Type
-      * @see [[org.apache.spark.sql.functions.filter(column:org\.apache\.spark\.sql\.Column,f:(org\.apache\.spark\.sql\.Column,org\.apache\.spark\.sql\.Column)=>org\.apache\.spark\.sql\.Column)* org.apache.spark.sql.functions.filter]]
       */
     def filterWIndex(
         function: (DoricColumn[T], IntegerColumn) => BooleanColumn
