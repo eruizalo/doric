@@ -138,6 +138,7 @@ private[syntax] trait NumericColumns {
       * Generate a sequence of integers from start to stop, incrementing by step.
       *
       * @group Numeric Type
+      * @see [[org.apache.spark.sql.functions.sequence(start:org\.apache\.spark\.sql\.Column,stop:org\.apache\.spark\.sql\.Column,step* org.apache.spark.sql.functions.sequence]]
       */
     def sequence(to: IntegerColumn, step: IntegerColumn): ArrayColumn[Int] =
       (column.elem, to.elem, step.elem).mapN(f.sequence).toDC
@@ -147,6 +148,7 @@ private[syntax] trait NumericColumns {
       * if start is less than or equal to stop, otherwise -1.
       *
       * @group Numeric Type
+      * @see [[org.apache.spark.sql.functions.sequence(start:org\.apache\.spark\.sql\.Column,stop:org\.apache\.spark\.sql\.Column)* org.apache.spark.sql.functions.sequence]]
       */
     def sequence(to: IntegerColumn): ArrayColumn[Int] =
       (column.elem, to.elem).mapN(f.sequence).toDC
