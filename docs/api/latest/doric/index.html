@@ -2504,7 +2504,7 @@ the standard normal distribution.
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AggregationColumns</dd></dl></div>
-    </li><li name="doric.syntax.NumericColumns#unixTimestamp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="doric.syntax.NumericColumns#unixTimestamp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Numeric Type">
       <a id="unixTimestamp():doric.LongColumn"></a><a id="unixTimestamp():LongColumn"></a>
       <span class="permalink">
       <a href="../doric/index.html#unixTimestamp():doric.LongColumn" title="Permalink">
@@ -2519,7 +2519,9 @@ the standard normal distribution.
         <span class="name">unixTimestamp</span><span class="params">()</span><span class="result">: <a href="#LongColumn=doric.DoricColumn[Long]" class="extmbr" name="doric.LongColumn">LongColumn</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumericColumns</dd></dl></div>
+      <p class="shortcomment cmt">Returns the current Unix timestamp (in seconds) as a long.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the current Unix timestamp (in seconds) as a long.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>NumericColumns</dd><dt>Note</dt><dd><span class="cmt"><p>All calls of <code>unix_timestamp</code> within the same query return the same value
+(i.e. the current timestamp is calculated at the start of query evaluation).</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/3.1.2/api/scala/org/apache/spark/sql/functions$.html#unix_timestamp():org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.functions">org.apache.spark.sql.functions.unix_timestamp</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.ControlStructures#when" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Control structure">
       <a id="when[T]:doric.syntax.WhenBuilder[T]"></a><a id="when[T]:WhenBuilder[T]"></a>
       <span class="permalink">
