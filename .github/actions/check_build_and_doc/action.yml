@@ -12,12 +12,14 @@ runs:
   steps:
     - uses: olafurpg/setup-scala@v13
     - uses: coursier/cache-action@v6
-    - name: Code Format 🔍
+    - name: Code Format
       if: inputs.testing == true
       run: sbt scalafmtCheckAll
+      shell: bash
     - name: Test & coverage 📋
       if: inputs.testing == true
       run: sbt coverage core/test coverageReport coverageAggregate
+      shell: bash
     - name: Publish coverage to codecov 📊
       if: inputs.testing == true
       uses: codecov/codecov-action@v2
@@ -27,5 +29,7 @@ runs:
         verbose: false
     - name: Build the microsite 💻
       run: sbt docs/mdoc
+      shell: bash
     - name: Build the scaladocs 💻
       run: sbt core/doc
+      shell: bash
