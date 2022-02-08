@@ -8,6 +8,7 @@ runs:
       run: |
         mkdir -p docs/target/mdoc/docs/api/latest
         cp -ar core/target/scala-2.12/api/* docs/target/mdoc/docs/api/latest/
+      shell: bash
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.2.2
       with:
