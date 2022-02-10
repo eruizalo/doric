@@ -16,17 +16,17 @@ val df = List(("hi", 31)).toDF("str", "int")
 // df: org.apache.spark.sql.package.DataFrame = [str: string, int: int]
 val col1 = colInt("str")
 // col1: NamedDoricColumn[Int] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@3dbdcfa2),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@396eceda),
 //   "str"
 // )
 val col2 = colString("int")
 // col2: NamedDoricColumn[String] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@6c7d5f84),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@2e300294),
 //   "int"
 // )
 val col3 = colInt("unknown")
 // col3: NamedDoricColumn[Int] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@1c9c7f1e),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@7890189),
 //   "unknown"
 // )
 ```
@@ -45,8 +45,8 @@ df.select(col1, col2, col3)
 // 	at cats.data.Validated.fold(Validated.scala:29)
 // 	at doric.sem.package$ErrorThrower.returnOrThrow(package.scala:9)
 // 	at doric.sem.TransformOps$DataframeTransformationSyntax.select(TransformOps.scala:139)
-// 	at repl.MdocSession$App0$$anonfun$6.apply(error-location.md:39)
-// 	at repl.MdocSession$App0$$anonfun$6.apply(error-location.md:39)
+// 	at repl.MdocSession$App0$$anonfun$1.apply(error-location.md:39)
+// 	at repl.MdocSession$App0$$anonfun$1.apply(error-location.md:39)
 ```
 
 The select statement throws a single exception, and it contains 3 different errors.
@@ -81,17 +81,17 @@ Us as developers want to abstract from this suffix and focus only in the unique 
 ```scala
 colString("name_user")
 // res3: NamedDoricColumn[String] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@11786a43),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@6b13d558),
 //   "name_user"
 // )
 colInt("age_user")
 // res4: NamedDoricColumn[Int] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@11b097a1),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@ad620fd),
 //   "age_user"
 // )
 colString("city_user")
 // res5: NamedDoricColumn[String] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1471/828477502@5a6029d9),
+//   Kleisli(doric.types.SparkType$$Lambda$1433/1686501851@1c4053aa),
 //   "city_user"
 // )
 ```
@@ -115,8 +115,8 @@ userDF.select(userc)
 // 	at cats.data.Validated.fold(Validated.scala:29)
 // 	at doric.sem.package$ErrorThrower.returnOrThrow(package.scala:9)
 // 	at doric.sem.TransformOps$DataframeTransformationSyntax.select(TransformOps.scala:139)
-// 	at repl.MdocSession$App0$$anonfun$14.apply(error-location.md:92)
-// 	at repl.MdocSession$App0$$anonfun$14.apply(error-location.md:90)
+// 	at repl.MdocSession$App0$$anonfun$2.apply(error-location.md:92)
+// 	at repl.MdocSession$App0$$anonfun$2.apply(error-location.md:90)
 ```
 
 What we really want is to mark as the source the place we are using our `user` method. We can achieve this by adding only an implicit value to the definition:
@@ -146,6 +146,6 @@ userDF.select(age, team)
 // 	at cats.data.Validated.fold(Validated.scala:29)
 // 	at doric.sem.package$ErrorThrower.returnOrThrow(package.scala:9)
 // 	at doric.sem.TransformOps$DataframeTransformationSyntax.select(TransformOps.scala:139)
-// 	at repl.MdocSession$App6$$anonfun$18.apply(error-location.md:140)
-// 	at repl.MdocSession$App6$$anonfun$18.apply(error-location.md:137)
+// 	at repl.MdocSession$App6$$anonfun$3.apply(error-location.md:140)
+// 	at repl.MdocSession$App6$$anonfun$3.apply(error-location.md:137)
 ```
