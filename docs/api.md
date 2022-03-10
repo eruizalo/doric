@@ -1,6 +1,6 @@
 ---
 title: API
-permalink: api/
+permalink: docs/api/
 ---
 
 
