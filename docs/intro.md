@@ -148,7 +148,7 @@ val sparkToDoricColumn = (f.col("str") + f.lit(true)).asDoric[String]
 df.select(sparkToDoricColumn).show
 // doric.sem.DoricMultiError: Found 1 error in select
 //   cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-//   'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@754737dd))]
+//   'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7d392a15))]
 //   +- Project [value#449 AS str#452]
 //      +- LocalRelation [value#449]
 //   
@@ -162,7 +162,7 @@ df.select(sparkToDoricColumn).show
 // 	at repl.MdocSession$App$$anonfun$3.apply(intro.md:87)
 // 	at repl.MdocSession$App$$anonfun$3.apply(intro.md:87)
 // Caused by: org.apache.spark.sql.AnalysisException: cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-// 'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@754737dd))]
+// 'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7d392a15))]
 // +- Project [value#449 AS str#452]
 //    +- LocalRelation [value#449]
 // 
