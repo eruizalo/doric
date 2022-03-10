@@ -17,7 +17,7 @@ val ex1: DoricColumn[String] =
     .caseW(col[Int]("int_col") > 3, "big") // conditions always are boolean, and the return type is checked
     .otherwise("small") // 
 // ex1: DoricColumn[String] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@74130456)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@1ece052b)
 // ) // 
   
 val ex2: DoricColumn[String] =
@@ -26,7 +26,7 @@ val ex2: DoricColumn[String] =
     .caseW(col[Int]("int_col") > 0, "small")
     .otherwiseNull // know that are cases that it can return null values
 // ex2: DoricColumn[String] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@3b171fbd)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@20dc763b)
 // ) // know that are cases that it can return null values
   
 List(0, 1, 2, 3, 4, 5).toDF("int_col")
@@ -57,7 +57,7 @@ val matchEx1: DoricColumn[Int] = matchToType[Int]("my_column") // we only know t
   .inOtherCaseError // in any other case, it will produce an error that will be displayed as any other [doric errors](/docs/errors/)
 // matchEx1: DoricColumn[Int] = TransformationDoricColumn(
 //   Kleisli(
-//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3268/0x0000000101460040@1ece052b
+//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3268/0x0000000101460040@4c81e7c2
 //   )
 // )
 ```
@@ -114,7 +114,7 @@ val matchEx2 = matchToType[Int]("my_column")
   .inOtherCase(-1)
 // matchEx2: DoricColumn[Int] = TransformationDoricColumn(
 //   Kleisli(
-//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3306/0x000000010148c840@51ac72f7
+//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3306/0x000000010148c840@7b9f7087
 //   )
 // )
 ```

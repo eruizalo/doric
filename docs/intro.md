@@ -83,7 +83,7 @@ we can operate according to the type.
 ```scala
 val concatCol = concat(col[String]("str"), col("str"))
 // concatCol: StringColumn = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@314b7629)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@71080bc9)
 // )
 df.select(concatCol).show()
 // +----------------+
@@ -148,7 +148,7 @@ val sparkToDoricColumn = (f.col("str") + f.lit(true)).asDoric[String]
 df.select(sparkToDoricColumn).show
 // doric.sem.DoricMultiError: Found 1 error in select
 //   cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-//   'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7ab1d30f))]
+//   'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@5e5ee52b))]
 //   +- Project [value#449 AS str#452]
 //      +- LocalRelation [value#449]
 //   
@@ -162,7 +162,7 @@ df.select(sparkToDoricColumn).show
 // 	at repl.MdocSession$App$$anonfun$3.apply(intro.md:87)
 // 	at repl.MdocSession$App$$anonfun$3.apply(intro.md:87)
 // Caused by: org.apache.spark.sql.AnalysisException: cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-// 'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7ab1d30f))]
+// 'Project [unresolvedalias((cast(str#452 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@5e5ee52b))]
 // +- Project [value#449 AS str#452]
 //    +- LocalRelation [value#449]
 // 
@@ -196,17 +196,17 @@ We know that doric can be seen as an extra boilerplate to get the columns, that'
 ```scala
 colString("str") // similar to col[String]("str")
 // res6: NamedDoricColumn[String] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@2c188e57),
+//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@6e36fb78),
 //   "str"
 // ) // similar to col[String]("str")
 colInt("int") // similar to col[Int]("int")
 // res7: NamedDoricColumn[Int] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@544876ca),
+//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@6e08e591),
 //   "int"
 // ) // similar to col[Int]("int")
 colArray[Int]("int") // similar to col[Array[Int]]("int")
 // res8: NamedDoricColumn[Array[Int]] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@6e36fb78),
+//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@60aa431),
 //   "int"
 // )
 ```
@@ -253,16 +253,16 @@ Doric's way
 ```scala
 val dArrCol: DoricColumn[Array[Int]] = col[Array[Int]]("arr")
 // dArrCol: DoricColumn[Array[Int]] = NamedDoricColumn(
-//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@6e08e591),
+//   Kleisli(doric.types.SparkType$$Lambda$1470/0x00000001008f9840@11e36c1c),
 //   "arr"
 // )
 val dAddedOne: DoricColumn[Array[Int]] = dArrCol.transform(x => x + 1.lit)
 // dAddedOne: DoricColumn[Array[Int]] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@60aa431)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@48d7a863)
 // )
 val dAddedAll: DoricColumn[Int] = dAddedOne.aggregate[Int](0.lit)((x, y) => x + y)
 // dAddedAll: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@11e36c1c)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@615ae885)
 // )
 
 dfArrays.select(dAddedOne as "complexTransformation").show
@@ -279,7 +279,7 @@ val complexCol: DoricColumn[Int] = col[Array[Int]]("arr")
   .transform(_ + 1.lit)
   .aggregate(0.lit)(_ + _)
 // complexCol: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@48d7a863)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@32a2f3b3)
 // )
   
 dfArrays.select(complexCol as "complexTransformation").show
@@ -314,7 +314,7 @@ Doric is a little stricter, forcing to transform this values to literal columns
 ```scala
 val colD = colInt("int") + 1.lit
 // colD: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@615ae885)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@38abfa77)
 // )
 
 intDF.select(colD).show
@@ -333,11 +333,11 @@ This is de basic flavor to work with doric, but this obvious transformations can
 import doric.implicitConversions.literalConversion
 val colSugarD = colInt("int") + 1
 // colSugarD: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@32a2f3b3)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@4dcac9b1)
 // )
 val columConcatLiterals = concat("this", "is","doric") // concat expects DoricColumn[String] values, the conversion puts them as expected
 // columConcatLiterals: StringColumn = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@38abfa77)
+//   Kleisli(cats.data.Kleisli$$Lambda$1474/0x00000001008fd040@7be21e4d)
 // ) // concat expects DoricColumn[String] values, the conversion puts them as expected
 
 intDF.select(colSugarD, columConcatLiterals).show

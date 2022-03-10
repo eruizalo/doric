@@ -9,7 +9,7 @@ permalink: docs/
 __Installation__
 
 To use doric, just add the following dependency in your favourite build tool:
-![Maven Central](https://img.shields.io/maven-central/v/org.hablapps/doric_2.12)
+[![Maven Central](https://img.shields.io/maven-central/v/org.hablapps/doric_2.12)](https://mvnrepository.com/artifact/org.hablapps/doric_2.12/0.0.2)
 
 _Sbt_
 ```scala
@@ -27,7 +27,7 @@ _Maven_
 Doric is committed to use the most modern APIs first.
 * Doric is compatible with Spark version 3.2.1.
 * The latest stable version of doric is 0.0.2.
-* The latest experimental version of doric is 0.0.0+1-d3472ba2-SNAPSHOT.
+* The latest experimental version of doric is 0.0.0+1-6f0cb11a-SNAPSHOT.
 
 __Import statements__
 
@@ -56,7 +56,7 @@ It's only when we try to construct the DataFrame that an exception is raised at 
 ```scala
 df
 // org.apache.spark.sql.AnalysisException: cannot resolve '(value * true)' due to data type mismatch: differing types in '(value * true)' (int and boolean).;
-// 'Project [unresolvedalias((value#632 * true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7ab1d30f))]
+// 'Project [unresolvedalias((value#632 * true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@5e5ee52b))]
 // +- LocalRelation [value#632]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)
@@ -159,7 +159,7 @@ strDf.select(f.col("str").asDoric[String]).show()
 strDf.select((f.col("str") + f.lit(true)).asDoric[String]).show
 // doric.sem.DoricMultiError: Found 1 error in select
 //   cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-//   'Project [unresolvedalias((cast(str#645 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7ab1d30f))]
+//   'Project [unresolvedalias((cast(str#645 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@5e5ee52b))]
 //   +- Project [value#642 AS str#645]
 //      +- LocalRelation [value#642]
 //   
@@ -173,7 +173,7 @@ strDf.select((f.col("str") + f.lit(true)).asDoric[String]).show
 // 	at repl.MdocSession$App$$anonfun$2.apply(quickstart.md:76)
 // 	at repl.MdocSession$App$$anonfun$2.apply(quickstart.md:76)
 // Caused by: org.apache.spark.sql.AnalysisException: cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-// 'Project [unresolvedalias((cast(str#645 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4595/0x0000000101926040@7ab1d30f))]
+// 'Project [unresolvedalias((cast(str#645 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4626/0x0000000101941840@5e5ee52b))]
 // +- Project [value#642 AS str#645]
 //    +- LocalRelation [value#642]
 // 
@@ -188,4 +188,3 @@ strDf.select((f.col("str") + f.lit(true)).asDoric[String]).show
 // 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1121)
 // 	at org.apache.spark.sql.catalyst.expressions.UnaryExpression.mapChildren(Expression.scala:467)
 ```
-
