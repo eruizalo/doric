@@ -114,7 +114,7 @@ val matchEx2 = matchToType[Int]("my_column")
   .inOtherCase(-1)
 // matchEx2: DoricColumn[Int] = TransformationDoricColumn(
 //   Kleisli(
-//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3306/0x000000010148c840@7b9f7087
+//     doric.syntax.NonEmptyTypeMatcher$$Lambda$3310/0x000000010148e040@7b9f7087
 //   )
 // )
 ```
