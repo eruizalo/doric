@@ -56,8 +56,8 @@ val userc = userCol("name1") // actual location of error :S
 userDF.select(userc)        // error location reported by Spark
 // org.apache.spark.sql.AnalysisException: cannot resolve 'name1_user' given input columns: [age_user, city_user, name_user];
 // 'Project ['name1_user]
-// +- Project [_1#583 AS name_user#590, _2#584 AS city_user#591, _3#585 AS age_user#592]
-//    +- LocalRelation [_1#583, _2#584, _3#585]
+// +- Project [_1#208 AS name_user#215, _2#209 AS city_user#216, _3#210 AS age_user#217]
+//    +- LocalRelation [_1#208, _2#209, _3#210]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:54)
 // 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:179)
