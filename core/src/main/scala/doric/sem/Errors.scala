@@ -110,6 +110,9 @@ case class SparkErrorWrapper(sparkCause: Throwable)(implicit
   override def message: String = sparkCause.getMessage
 }
 
+/**
+  * 
+  */
 object Location {
   implicit def location(implicit
       line: sourcecode.Line,
