@@ -103,6 +103,7 @@ private[sem] trait AggregationOps
       * @note this function by default retains the grouping columns in its output.
       *       To not retain grouping columns, set `spark.sql.retainGroupColumns` to false.
       * @group Group Dataframe operation
+      * @todo hola esto es una prueba
       * @see [[org.apache.spark.sql.Dataset.agg(expr:* org.apache.spark.sql.Dataset.agg]]
       */
     def agg(col: DoricColumn[_], cols: DoricColumn[_]*): DataFrame =
