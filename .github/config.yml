@@ -1,0 +1,6 @@
+todo:
+  autoAssign: true
+  blobLines: 5
+  label: todoBot
+  keyword: ["@makeAnIssue", "@issue"]
+  bodyKeyword: ['@body','BODY']

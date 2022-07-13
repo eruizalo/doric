@@ -197,7 +197,7 @@ private[syntax] trait StringColumns {
       * characters.
       *
       * @group String Type
-      * @see org.apache.spark.sql.functions.lpad
+      * @see [[org.apache.spark.sql.functions.lpad(str:org\.apache\.spark\.sql\.Column,len:scala\.Int,pad:String):* org.apache.spark.sql.functions.lpad]]
       * @todo scaladoc link (issue #135)
       */
     def lpad(len: IntegerColumn, pad: StringColumn): StringColumn =

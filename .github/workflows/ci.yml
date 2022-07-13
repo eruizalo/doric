@@ -10,6 +10,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  todo-check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Code Todo Bot
+        uses: bilalshaikh42/todo@v0.0.1
   build:
     #if: github.event.pull_request.draft == false
     strategy:
