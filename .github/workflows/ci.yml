@@ -44,9 +44,3 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           review-message: "Please take a look :eyes:"
-
-      - name: Check, build and doc 🎯 - Spark [${{ matrix.spark }}] - scope [${{ matrix.scope }}]
-        uses: ./.github/actions/check_build_and_doc
-        env:
-          SPARK_VERSION: ${{ matrix.spark }}
-          SCOPE: ${{ matrix.scope }}
