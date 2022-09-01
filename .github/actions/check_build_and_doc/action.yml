@@ -34,16 +34,43 @@ runs:
       shell: bash
 
     - name: Test Summary
+      if: github.event_name == 'pull_request'
       uses: test-summary/action@v1
       with:
         paths: "./core/target/test-reports/**/TEST-*.xml"
         output: "./core/target/test-summary.md"
 
-    - name: Upload test summary
-      uses: actions/upload-artifact@v3
+    - name: Find Comment
+      if: github.event_name == 'pull_request'
+      uses: peter-evans/find-comment@v2
+      id: fc
       with:
-        name: "summary-${{ env.SPARK_VERSION }}"
-        path: "./core/target/test-summary.md"
+        issue-number: ${{ github.event.pull_request.number }}
+        body-includes: Test summary report
+
+    - name: Get summary
+      id: summary
+      run: echo ::set-output name=summary::$(cat ./core/target/test-summary.md)
+      shell: bash
+    - name: Test output
+      shell: bash
+      run: echo "${{ env.SPARK_VERSION }} -> ${{ steps.summary.outputs.summary }}"
+
+    - name: Create or update comment
+      if: github.event_name == 'pull_request'
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          ${{ env.SPARK_VERSION }} -> ${{ steps.summary.outputs.summary }}
+        edit-mode: append
+
+#    - name: Upload test summary
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: "summary-${{ env.SPARK_VERSION }}"
+#        path: "./core/target/test-summary.md"
 
     - name: Publish coverage to codecov 📊
       if: contains(env.SCOPE, 'uploadReport')

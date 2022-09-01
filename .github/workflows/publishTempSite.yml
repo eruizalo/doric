@@ -6,6 +6,7 @@ on:
 #      - '*doc/*'
     branches-ignore:
       - main
+      - fix/coverage_twice # TODO if you see this, tell me
   workflow_dispatch:
 
 concurrency:
