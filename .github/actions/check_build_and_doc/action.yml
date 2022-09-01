@@ -52,9 +52,6 @@ runs:
       id: summary
       run: echo ::set-output name=summary::$(cat ./core/target/test-summary.md)
       shell: bash
-    - name: Test output
-      shell: bash
-      run: echo "${{ env.SPARK_VERSION }} -> ${{ steps.summary.outputs.summary }}"
 
     - name: Create or update comment
       if: github.event_name == 'pull_request'
@@ -63,7 +60,7 @@ runs:
         comment-id: ${{ steps.fc.outputs.comment-id }}
         issue-number: ${{ github.event.pull_request.number }}
         body: |
-          ${{ env.SPARK_VERSION }} -> ${{ steps.summary.outputs.summary }}
+          |   ${{ env.SPARK_VERSION }}    | [${{ steps.summary.outputs.summary }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})  |
         edit-mode: append
 
 #    - name: Upload test summary
