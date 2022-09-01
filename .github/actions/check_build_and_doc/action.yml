@@ -33,17 +33,17 @@ runs:
       run: sbt -DsparkVersion=${{ env.SPARK_VERSION }} coverage +core/test coverageAggregate
       shell: bash
 
-#    - name: Test Summary
-#      uses: test-summary/action@v1
-#      with:
-#        paths: "./target/scala-*/scoverage-report/scoverage.xml"
-#        output: "./target/test-summary/summary.md"
+    - name: Test Summary
+      uses: test-summary/action@v1
+      with:
+        paths: "./core/target/test-reports/**/TEST-*.xml"
+        output: "./core/target/test-summary.md"
 
     - name: Upload test summary
       uses: actions/upload-artifact@v3
       with:
         name: "summary-${{ env.SPARK_VERSION }}"
-        path: "./target/scala-*/scoverage-report/scoverage.xml"
+        path: "./core/target/test-summary.md"
 
     - name: Publish coverage to codecov 📊
       if: contains(env.SCOPE, 'uploadReport')
