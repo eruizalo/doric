@@ -62,8 +62,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check, build and doc 🎯 - Spark [${{ matrix.spark }}] - scope [${{ matrix.scope }}]
-        uses: ./.github/actions/check_build_and_doc
-        env:
-          SPARK_VERSION: ${{ matrix.spark }}
-          SCOPE: ${{ matrix.scope }}
+      - name: Create Todo Comments
+        uses: gkampitakis/github-action-todo-commenter@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          review-message: "Please take a look :eyes:"
