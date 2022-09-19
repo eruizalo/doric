@@ -127,7 +127,7 @@ jobs:
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     steps:
       - name: Download workflow artifact <${{ matrix.spark }}>
-        uses: marcofaggian/action-download-multiple-artifacts@v3.0.7
+        uses: marcofaggian/action-download-multiple-artifacts@v3.0.8
         with:
           names: test-summary-${{ matrix.spark }}.md
           github_token: ${{secrets.GITHUB_TOKEN}}
