@@ -215,7 +215,7 @@
                         <a href="DoricJoinColumn.html" title="">DoricJoinColumn</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="DynamicFieldAccessor.html" title=""></a>
+                        <a class="trait" href="DynamicFieldAccessor.html" title=""></a>
                         <a href="DynamicFieldAccessor.html" title="">DynamicFieldAccessor</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
@@ -555,7 +555,7 @@
       </span>
       
       
-    </li><li name="doric.syntax.BooleanColumns.BooleanOperationsSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="doric.syntax.BooleanColumns.BooleanOperationsSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Boolean Type">
       <a id="BooleanOperationsSyntaxextendsAnyRef"></a><a id="BooleanOperationsSyntax:BooleanOperationsSyntax"></a>
       <span class="permalink">
       <a href="../doric/index.html#BooleanOperationsSyntaxextendsAnyRef" title="Permalink">
@@ -570,7 +570,7 @@
         <span class="name">BooleanOperationsSyntax</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.15/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BooleanColumns</dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>BooleanColumns</dd></dl></div>
     </li><li name="doric.syntax.BooleanColumns31.BooleanOperationsSyntax31" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Boolean Type">
       <a id="BooleanOperationsSyntax31extendsAnyRef"></a><a id="BooleanOperationsSyntax31:BooleanOperationsSyntax31"></a>
       <span class="permalink">
@@ -764,7 +764,7 @@
       
       
     </li><li name="doric.DoricColumn" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="DoricColumn[T]extendsAnyRef"></a><a id="DoricColumn[T]:DoricColumn[T]"></a>
+      <a id="DoricColumn[T]extendsdoric.DynamicFieldAccessor[T]"></a><a id="DoricColumn[T]:DoricColumn[T]"></a>
       <span class="permalink">
       <a href="../doric/DoricColumn.html" title="Permalink">
         <i class="material-icons"></i>
@@ -775,7 +775,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="DoricColumn.html"><span class="name">DoricColumn</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.15/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+        <a title="" href="DoricColumn.html"><span class="name">DoricColumn</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="#DynamicFieldAccessor[T]extendsDynamic" class="extmbr" name="doric.DynamicFieldAccessor">DynamicFieldAccessor</a>[<span class="extype" name="doric.DoricColumn.T">T</span>]</span>
       </span>
       
       
@@ -843,7 +843,7 @@
       </span>
       
       
-    </li><li name="doric.syntax.DStructs.DynamicFieldAccessor" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="doric.syntax.DStructs.DynamicFieldAccessor" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="DynamicFieldAccessor[T]extendsDynamic"></a><a id="DynamicFieldAccessor[T]:DynamicFieldAccessor[T]"></a>
       <span class="permalink">
       <a href="../doric/index.html#DynamicFieldAccessor[T]extendsDynamic" title="Permalink">
@@ -852,7 +852,7 @@
     </span>
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
         <span class="name">DynamicFieldAccessor</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.15/scala/Dynamic.html#scala.Dynamic" class="extype" name="scala.Dynamic">Dynamic</a></span>
@@ -1551,7 +1551,27 @@
         <div class="values members">
               <h3>Concrete Value Members</h3>
               <ol>
-                <li name="doric.syntax.AggregationColumns#aproxCountDistinct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Aggregation Any Type">
+                <li name="doric.syntax.BooleanColumns#!" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Boolean Type">
+      <a id="!(col:doric.BooleanColumn):doric.BooleanColumn"></a><a id="!(BooleanColumn):BooleanColumn"></a>
+      <span class="permalink">
+      <a href="../doric/index.html#!(col:doric.BooleanColumn):doric.BooleanColumn" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang" class="name">!</span><span class="params">(<span name="col">col: <a href="#BooleanColumn=doric.DoricColumn[Boolean]" class="extmbr" name="doric.BooleanColumn">BooleanColumn</a></span>)</span><span class="result">: <a href="#BooleanColumn=doric.DoricColumn[Boolean]" class="extmbr" name="doric.BooleanColumn">BooleanColumn</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Inversion of boolean expression, i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Inversion of boolean expression, i.e. NOT.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>BooleanColumns</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd><dt>See also</dt><dd><span class="cmt"><p><a href="#not(col:doric.BooleanColumn):doric.BooleanColumn" class="extmbr" name="doric#not">not</a></p></span></dd></dl></div>
+    </li><li name="doric.syntax.AggregationColumns#aproxCountDistinct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Aggregation Any Type">
       <a id="aproxCountDistinct(colName:String):doric.LongColumn"></a><a id="aproxCountDistinct(String):LongColumn"></a>
       <span class="permalink">
       <a href="../doric/index.html#aproxCountDistinct(colName:String):doric.LongColumn" title="Permalink">
