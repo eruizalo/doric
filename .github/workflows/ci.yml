@@ -32,12 +32,12 @@ jobs:
   context_dump:
     runs-on: ubuntu-latest
     steps:
-#      - name: <DEBUG> Dump GitHub context
-#        env:
-#          GITHUB_CONTEXT: ${{ toJson(github) }}
-#        run: |
-#          echo "$GITHUB_CONTEXT"
-#        shell: bash
+      - name: <DEBUG> Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+        shell: bash
 
       - name: PR json
         shell: bash
@@ -87,7 +87,7 @@ jobs:
     needs: ["build"]
     runs-on: ubuntu-latest
     steps:
-      - name: "Ensure matrix ends"
+      - name: "Ensure matrix ends ok"
         run: |
           echo "Matrix end correctly"
         shell: bash
