@@ -14,20 +14,20 @@ raising a run-time exception:
 ```scala
 // Spark
 List(1,2,3).toDF().select(f.col("id")+1)
-// org.apache.spark.sql.AnalysisException: cannot resolve 'id' given input columns: [value];
-// 'Project [unresolvedalias(('id + 1), Some(org.apache.spark.sql.Column$$Lambda$4040/0x000000010176c840@37291df1))]
+// org.apache.spark.sql.AnalysisException: Column 'id' does not exist. Did you mean one of the following? [value];
+// 'Project [unresolvedalias(('id + 1), Some(org.apache.spark.sql.Column$$Lambda$4152/0x000000010184f040@59de7aaa))]
 // +- LocalRelation [value#291]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:54)
-// 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:182)
-// 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$$nestedInanonfun$checkAnalysis$1$2.applyOrElse(CheckAnalysis.scala:178)
-// 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUpWithPruning$2(TreeNode.scala:535)
-// 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
-// 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformUpWithPruning(TreeNode.scala:535)
-// 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformUpWithPruning$1(TreeNode.scala:532)
-// 	at org.apache.spark.sql.catalyst.trees.BinaryLike.mapChildren(TreeNode.scala:1148)
-// 	at org.apache.spark.sql.catalyst.trees.BinaryLike.mapChildren$(TreeNode.scala:1147)
-// 	at org.apache.spark.sql.catalyst.expressions.BinaryExpression.mapChildren(Expression.scala:555)
+// 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$7(CheckAnalysis.scala:199)
+// 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$7$adapted(CheckAnalysis.scala:192)
+// 	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:367)
+// 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:366)
+// 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:366)
+// 	at scala.collection.Iterator.foreach(Iterator.scala:943)
+// 	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+// 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+// 	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
 ```
 
 ```scala
@@ -44,13 +44,13 @@ List(1,2,3).toDF().select(colInt("id")+1)
 // 	at repl.MdocSession$MdocApp$$anonfun$2.apply(validations.md:37)
 // 	at repl.MdocSession$MdocApp$$anonfun$2.apply(validations.md:37)
 // Caused by: org.apache.spark.sql.AnalysisException: Cannot resolve column name "id" among (value)
-// 	at org.apache.spark.sql.errors.QueryCompilationErrors$.cannotResolveColumnNameAmongFieldsError(QueryCompilationErrors.scala:2262)
-// 	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$resolveException(Dataset.scala:258)
-// 	at org.apache.spark.sql.Dataset.$anonfun$resolve$1(Dataset.scala:250)
+// 	at org.apache.spark.sql.errors.QueryCompilationErrors$.cannotResolveColumnNameAmongFieldsError(QueryCompilationErrors.scala:2264)
+// 	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$resolveException(Dataset.scala:259)
+// 	at org.apache.spark.sql.Dataset.$anonfun$resolve$1(Dataset.scala:251)
 // 	at scala.Option.getOrElse(Option.scala:189)
-// 	at org.apache.spark.sql.Dataset.resolve(Dataset.scala:250)
-// 	at org.apache.spark.sql.Dataset.col(Dataset.scala:1352)
-// 	at org.apache.spark.sql.Dataset.apply(Dataset.scala:1319)
+// 	at org.apache.spark.sql.Dataset.resolve(Dataset.scala:251)
+// 	at org.apache.spark.sql.Dataset.col(Dataset.scala:1417)
+// 	at org.apache.spark.sql.Dataset.apply(Dataset.scala:1384)
 // 	at doric.types.SparkType.$anonfun$validate$1(SparkType.scala:61)
 // 	at cats.data.KleisliApply.$anonfun$product$2(Kleisli.scala:674)
 // 	at cats.data.Kleisli.$anonfun$map$1(Kleisli.scala:40)
