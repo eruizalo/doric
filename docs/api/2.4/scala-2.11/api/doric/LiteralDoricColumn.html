@@ -1564,51 +1564,6 @@ If either argument is null, the result will also be null.
             This conversion will take place only if T is <a href="http://stackoverflow.com/questions/2982276/what-is-a-context-bound-in-scala" target="_blank">
         context-bounded</a> by doric.types.NumericType (T: <a href="types/NumericType.html" class="extype" name="doric.types.NumericType">NumericType</a>).
           </dd><dt>Definition Classes</dt><dd>NumericOperationsSyntax</dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@exp(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.exp</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.MapColumns.MapColumnOps#explode" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
-      <a id="explode:doric.DoricColumn[K]"></a>
-      <a id="explode:DoricColumn[K]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">explode</span><span class="result">: <a href="DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@explode:doric.DoricColumn[K]" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new row for each element in the given map column.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new row for each element in the given map column.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#MapColumnOps[K,V]extendsAnyRef" class="extmbr" name="doric.MapColumnOps">doric.MapColumnOps</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>] performed by method MapColumnOps in doric.syntax.MapColumns.
-            This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
-          </dd><dt>Definition Classes</dt><dd>MapColumnOps</dd><dt>To do</dt><dd><span class="cmt"><p>This function actually does not return a single column but two columns</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@explode(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.explode</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.MapColumns.MapColumnOps#explodeOuter" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
-      <a id="explodeOuter:doric.RowColumn"></a>
-      <a id="explodeOuter:RowColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">explodeOuter</span><span class="result">: <a href="package.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@explodeOuter:doric.RowColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new row for each element in the given map column.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new row for each element in the given map column.
-Unlike explode, if the array is null or empty then null is produced.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#MapColumnOps[K,V]extendsAnyRef" class="extmbr" name="doric.MapColumnOps">doric.MapColumnOps</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>] performed by method MapColumnOps in doric.syntax.MapColumns.
-            This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
-          </dd><dt>Definition Classes</dt><dd>MapColumnOps</dd><dt>To do</dt><dd><span class="cmt"><p>This function actually does not return a single column but two columns</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@explode_outer(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.explode_outer</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.NumericColumns.NumericOperationsSyntax#expm1" visbl="pub" data-isabs="false" fullComment="yes" group="Numeric Type">
       <a id="expm1:doric.DoubleColumn"></a>
       <a id="expm1:DoubleColumn"></a>
@@ -1781,72 +1736,6 @@ If d is less than 0, the result will be null.
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#fromJson" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="fromJson(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn"></a>
-      <a id="fromJson(StringColumn,Map[String,String]):RowColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">fromJson</span><span class="params">(<span name="schema">schema: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="package.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@fromJson(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Parses a column containing a CSV string into a StructType with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a column containing a CSV string into a StructType with the specified schema.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><dt>Note</dt><dd><span class="cmt"><p>Returns null, in the case of an unparseable string</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@from_json(e:org.apache.spark.sql.Column,schema:org.apache.spark.sql.Column,options:java.util.Map[String,String]):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.from_json</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#fromJson2" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="fromJson2(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn"></a>
-      <a id="fromJson2(StructType,Map[String,String]):RowColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">fromJson2</span><span class="params">(<span name="schema">schema: <a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.types.StructType" class="extype" target="_top">StructType</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="package.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@fromJson2(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Parses a column containing a CSV string into a StructType with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a column containing a CSV string into a StructType with the specified schema.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span>, <span class="cmt"><p>here we have an error because of same function name</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Returns null, in the case of an unparseable string</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.from_json(e:org\.apache\.spark\.sql\.Column,schema:org\.apache\.spark\.sql\.types\.StructType,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.from_json</p></span></dd></dl></div>
-    </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#fromJson3" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="fromJson3(schema:org.apache.spark.sql.types.DataType,options:Map[String,String]):doric.RowColumn"></a>
-      <a id="fromJson3(DataType,Map[String,String]):RowColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">fromJson3</span><span class="params">(<span name="schema">schema: <a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.types.DataType" class="extype" target="_top">DataType</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="package.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@fromJson3(schema:org.apache.spark.sql.types.DataType,options:Map[String,String]):doric.RowColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Parses a column containing a CSV string into a StructType with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a column containing a CSV string into a StructType with the specified schema.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span>, <span class="cmt"><p>here we have an error because of same function name</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Returns null, in the case of an unparseable string</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.from_json(e:org\.apache\.spark\.sql\.Column,schema:org\.apache\.spark\.sql\.types\.DataType,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.from_json</p></span></dd></dl></div>
     </li><li name="doric.syntax.NumericColumns.LongOperationsSyntax#fromUnixTime" visbl="pub" data-isabs="false" fullComment="yes" group="Numeric Type">
       <a id="fromUnixTime(format:doric.StringColumn):doric.StringColumn"></a>
       <a id="fromUnixTime(StringColumn):StringColumn"></a>
@@ -1952,24 +1841,24 @@ that time as a timestamp in the given time zone. For example, 'GMT+1' would yiel
             This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
           </dd><dt>Definition Classes</dt><dd>MapColumnOps</dd></dl></div>
     </li><li name="doric.syntax.DStructs.DStructOps#getChild" visbl="pub" data-isabs="false" fullComment="yes" group="Struct Type">
-      <a id="getChild[T2](subColumnName:String)(implicitevidence$1:doric.types.SparkType[T2],implicitlocation:doric.sem.Location):doric.DoricColumn[T2]"></a>
-      <a id="getChild[T2](String)(SparkType[T2],Location):DoricColumn[T2]"></a>
+      <a id="getChild[T](subColumnName:String)(implicitevidence$1:doric.types.SparkType[T],implicitlocation:doric.sem.Location):doric.DoricColumn[T]"></a>
+      <a id="getChild[T](String)(SparkType[T],Location):DoricColumn[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">getChild</span><span class="tparams">[<span name="T2">T2</span>]</span><span class="params">(<span name="subColumnName">subColumnName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.DStructs.DStructOps.getChild.T2">T2</span>]</span>, <span name="location">location: <a href="sem/Location.html" class="extype" name="doric.sem.Location">Location</a></span>)</span><span class="result">: <a href="DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.DStructs.DStructOps.getChild.T2">T2</span>]</span>
+        <span class="implicit">getChild</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="subColumnName">subColumnName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.DStructs.DStructOps.getChild.T">T</span>]</span>, <span name="location">location: <a href="sem/Location.html" class="extype" name="doric.sem.Location">Location</a></span>)</span><span class="result">: <a href="DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.DStructs.DStructOps.getChild.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@getChild[T2](subColumnName:String)(implicitevidence$1:doric.types.SparkType[T2],implicitlocation:doric.sem.Location):doric.DoricColumn[T2]" title="Permalink" target="_top">
+      <a href="../index.html#doric.LiteralDoricColumn@getChild[T](subColumnName:String)(implicitevidence$1:doric.types.SparkType[T],implicitlocation:doric.sem.Location):doric.DoricColumn[T]" title="Permalink" target="_top">
         <img src="../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Retrieves the child row of the Struct column
-</p><div class="fullcomment"><div class="comment cmt"><p>Retrieves the child row of the Struct column
-</p></div><dl class="paramcmts block"><dt class="tparam">T2</dt><dd class="cmt"><p>
+      <p class="shortcomment cmt">Retreaves the child row of the Struct column
+</p><div class="fullcomment"><div class="comment cmt"><p>Retreaves the child row of the Struct column
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
 the expected type of the child column.</p></dd><dt class="param">subColumnName</dt><dd class="cmt"><p>
 the column name expected to find in the struct.</p></dd><dt class="param">location</dt><dd class="cmt"><p>
 the location if an error is generated</p></dd><dt>returns</dt><dd class="cmt"><p>
@@ -2037,39 +1926,6 @@ a reference to the child column of the provided type.</p></dd></dl><dl class="at
             <a href="LiteralDoricColumn$$LiteralGetter.html" class="extype" name="doric.LiteralDoricColumn.LiteralGetter">LiteralGetter</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] performed by method LiteralGetter in <a href="LiteralDoricColumn$.html" class="extype" name="doric.LiteralDoricColumn">doric.LiteralDoricColumn</a>.
             
           </dd><dt>Definition Classes</dt><dd><a href="LiteralDoricColumn$$LiteralGetter.html" class="extype" name="doric.LiteralDoricColumn.LiteralGetter">LiteralGetter</a></dd></dl></div>
-    </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#getJsonObject" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="getJsonObject(path:doric.StringColumn):doric.StringColumn"></a>
-      <a id="getJsonObject(StringColumn):StringColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">getJsonObject</span><span class="params">(<span name="path">path: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>)</span><span class="result">: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@getJsonObject(path:doric.StringColumn):doric.StringColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Extracts json object from a json string based on json path specified, and returns json string
-of the extracted json object.</p><div class="fullcomment"><div class="comment cmt"><p>Extracts json object from a json string based on json path specified, and returns json string
-of the extracted json object.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><div class="block">Example:
-               <ol><li class="cmt"><p></p><pre> df.withColumn(<span class="lit">"test"</span>, colString(<span class="lit">"col1"</span>).getJsonObject[<span class="std">String</span>](colString(<span class="lit">"col2"</span>)))
-   .show(<span class="kw">false</span>)
-+-----------------------------------------+----*----*
-|col1                                     |col2|test|
-+-----------------------------------------+----*----*
-|{<span class="lit">"a"</span>: <span class="num">1</span>,<span class="lit">"b"</span>: <span class="lit">"a"</span>,<span class="lit">"date"</span>: <span class="lit">"26/08/2015"</span>}   |$.a |<span class="num">1</span>   |
-|{<span class="lit">"a"</span>: <span class="num">2</span>,<span class="lit">"b"</span>: <span class="lit">"test"</span>,<span class="lit">"date"</span>: <span class="lit">"26/08/2015"</span>}|$.b |test|
-|{<span class="lit">"a"</span>: <span class="num">3</span>}                                 |$.b |<span class="kw">null</span>|
-+-----------------------------------------+----*----*</pre></li></ol>
-            </div><dt>Note</dt><dd><span class="cmt"><p>It will return null if the input json string is invalid.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@get_json_object(e:&lt;?&gt;,path:&lt;?&gt;):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.get_json_object</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.LiteralConversions.DoricColLiteralGetter#getValueIfLiteral" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getValueIfLiteral:Option[T]"></a>
       <a id="getValueIfLiteral:Option[T]"></a>
@@ -2302,28 +2158,6 @@ to uppercase. Words are delimited by whitespace.
             This conversion will take place only if T is <a href="http://stackoverflow.com/questions/2982276/what-is-a-context-bound-in-scala" target="_blank">
         context-bounded</a> by doric.types.SparkType (T: <a href="types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>).
           </dd><dt>Definition Classes</dt><dd>BasicCol</dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.Column@isNull:org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.Column.isNull</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#jsonTuple" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="jsonTuple(name:doric.StringColumn,names:doric.StringColumn*):doric.StringColumn"></a>
-      <a id="jsonTuple(StringColumn,StringColumn*):StringColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">jsonTuple</span><span class="params">(<span name="name">name: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>, <span name="names">names: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a>*</span>)</span><span class="result">: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@jsonTuple(name:doric.StringColumn,names:doric.StringColumn*):doric.StringColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new row for a json column according to the given field names.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new row for a json column according to the given field names.
-</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><dt>To do</dt><dd><span class="cmt"><p>It does not return one column but N columns</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@json_tuple(json:&lt;?&gt;,fields:&lt;?&gt;):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.json_tuple</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.MapColumns.MapColumnOps#keys" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
       <a id="keys:doric.DoricColumn[Array[K]]"></a>
       <a id="keys:DoricColumn[Array[K]]"></a>
@@ -3010,49 +2844,6 @@ because that is the first Sunday after 2015-07-27.</p></li></ol>
             This conversion will take place only if T is <a href="http://stackoverflow.com/questions/2982276/what-is-a-context-bound-in-scala" target="_blank">
         context-bounded</a> by doric.types.SparkType (T: <a href="types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>).
           </dd><dt>Definition Classes</dt><dd>BasicCol</dd></dl></div>
-    </li><li name="doric.syntax.MapColumns.MapColumnOps#posExplode" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
-      <a id="posExplode:doric.DoricColumn[K]"></a>
-      <a id="posExplode:DoricColumn[K]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">posExplode</span><span class="result">: <a href="DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@posExplode:doric.DoricColumn[K]" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new row for each element with position in the given map column.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new row for each element with position in the given map column.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#MapColumnOps[K,V]extendsAnyRef" class="extmbr" name="doric.MapColumnOps">doric.MapColumnOps</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>] performed by method MapColumnOps in doric.syntax.MapColumns.
-            This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
-          </dd><dt>Definition Classes</dt><dd>MapColumnOps</dd><dt>To do</dt><dd><span class="cmt"><p>This function actually does not return a single column but three columns</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Uses the default column name pos for position, and key and value for elements in the map unless specified otherwise.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@posexplode(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.posexplode</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.MapColumns.MapColumnOps#posExplodeOuter" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
-      <a id="posExplodeOuter:doric.RowColumn"></a>
-      <a id="posExplodeOuter:RowColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">posExplodeOuter</span><span class="result">: <a href="package.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@posExplodeOuter:doric.RowColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Creates a new row for each element with position in the given map column.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new row for each element with position in the given map column.
-Unlike posexplode, if the map is null or empty then the row (null, null) is produced.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#MapColumnOps[K,V]extendsAnyRef" class="extmbr" name="doric.MapColumnOps">doric.MapColumnOps</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>] performed by method MapColumnOps in doric.syntax.MapColumns.
-            This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
-          </dd><dt>Definition Classes</dt><dd>MapColumnOps</dd><dt>To do</dt><dd><span class="cmt"><p>This function actually does not return a single column but three columns</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Uses the default column name pos for position, and key and value for elements in the map unless specified otherwise.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@posexplode_outer(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.posexplode_outer</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.NumericColumns.NumericOperationsSyntax#pow" visbl="pub" data-isabs="false" fullComment="yes" group="Numeric Type">
       <a id="pow(right:doric.DoricColumn[T]):doric.DoubleColumn"></a>
       <a id="pow(DoricColumn[T]):DoubleColumn"></a>
@@ -3406,27 +3197,6 @@ string column.
             <a href="package.html#StringOperationsSyntaxextendsAnyRef" class="extmbr" name="doric.StringOperationsSyntax">doric.StringOperationsSyntax</a> performed by method StringOperationsSyntax in doric.syntax.StringColumns.
             This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
           </dd><dt>Definition Classes</dt><dd>StringOperationsSyntax</dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@rtrim(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.rtrim</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.StringColumn24.StringOperationsSyntax24#schemaOfJson" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
-      <a id="schemaOfJson():doric.StringColumn"></a>
-      <a id="schemaOfJson():StringColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit">schemaOfJson</span><span class="params">()</span><span class="result">: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@schemaOfJson():doric.StringColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Parses a JSON string and infers its schema in DDL format.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a JSON string and infers its schema in DDL format.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#StringOperationsSyntax24extendsAnyRef" class="extmbr" name="doric.syntax.StringColumn24.StringOperationsSyntax24">doric.StringOperationsSyntax24</a> performed by method StringOperationsSyntax24 in <a href="syntax/StringColumn24.html" class="extype" name="doric.syntax.StringColumn24">doric.syntax.StringColumn24</a>.
-            This conversion will take place only if T is String (T =:= <span class="extype" name="scala.Predef.String">String</span>).
-          </dd><dt>Definition Classes</dt><dd><a href="syntax/StringColumn24$StringOperationsSyntax24.html" class="extype" name="doric.syntax.StringColumn24.StringOperationsSyntax24">StringOperationsSyntax24</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.AnalysisException" class="extype" target="_top"><code>org.apache.spark.sql.AnalysisException</code></a> if it is not a foldable string expression or null</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.functions$@schema_of_json(json:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" target="_top">org.apache.spark.sql.functions.schema_of_json</a></p></span></dd></dl></div>
     </li><li name="doric.syntax.TimestampColumns.TimestampColumnLikeSyntax#second" visbl="pub" data-isabs="false" fullComment="yes" group="Timestamp Type">
       <a id="second:doric.IntegerColumn"></a>
       <a id="second:IntegerColumn"></a>
@@ -4893,48 +4663,6 @@ starts are inclusive but the window ends are exclusive.
             This conversion will take place only if T is <a href="http://stackoverflow.com/questions/2982276/what-is-a-context-bound-in-scala" target="_blank">
         context-bounded</a> by doric.types.NumericType (T: <a href="types/NumericType.html" class="extype" name="doric.types.NumericType">NumericType</a>).
           </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(literalDoricColumn: doric.NumericOperationsSyntax[T]).&gt;=(other)</pre></div></dd><dt>Definition Classes</dt><dd>NumericOperationsSyntax</dd></dl></div>
-    </li><li name="doric.syntax.MapColumns.MapColumnOps#toJson" visbl="pub" data-isabs="false" fullComment="yes" group="Map Type">
-      <a id="toJson(options:Map[String,String]):doric.StringColumn"></a>
-      <a id="toJson(Map[String,String]):StringColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">toJson</span><span class="params">(<span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@toJson(options:Map[String,String]):doric.StringColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Converts a column containing a StructType into a JSON string with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a column containing a StructType into a JSON string with the specified schema.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#MapColumnOps[K,V]extendsAnyRef" class="extmbr" name="doric.MapColumnOps">doric.MapColumnOps</a>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>] performed by method MapColumnOps in doric.syntax.MapColumns.
-            This conversion will take place only if T is Map[K, V] (T =:= <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="doric.syntax.MapColumns.MapColumnOps.K">K</span>, <span class="extype" name="doric.syntax.MapColumns.MapColumnOps.V">V</span>]).
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(literalDoricColumn: doric.MapColumnOps[K, V]).toJson(options)</pre></div></dd><dt>Definition Classes</dt><dd>MapColumnOps</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="https://docs.oracle.com/javase/8/docs/api/index.html#java.lang.IllegalArgumentException" class="extype" target="_top"><code>java.lang.IllegalArgumentException</code></a> in the case of an unsupported type.</p></span></dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.to_json(e:org\.apache\.spark\.sql\.Column,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.to_csv</p></span></dd></dl></div>
-    </li><li name="doric.syntax.DStructs.DStructOps#toJson" visbl="pub" data-isabs="false" fullComment="yes" group="Struct Type">
-      <a id="toJson(options:Map[String,String]):doric.StringColumn"></a>
-      <a id="toJson(Map[String,String]):StringColumn"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">toJson</span><span class="params">(<span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="package.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../index.html#doric.LiteralDoricColumn@toJson(options:Map[String,String]):doric.StringColumn" title="Permalink" target="_top">
-        <img src="../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Converts a column containing a StructType into a JSON string with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a column containing a StructType into a JSON string with the specified schema.</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] to
-            <a href="package.html#DStructOps[T]extendsAnyRef" class="extmbr" name="doric.DStructOps">doric.DStructOps</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>] performed by method DStructOps in doric.syntax.DStructs.
-            This conversion will take place only if an implicit value of type <a href="types/SparkType$.html#Custom[T,O]=doric.types.SparkType[T]{typeOriginalSparkType=O}" class="extmbr" name="doric.types.SparkType.Custom">Custom</a>[<span class="extype" name="doric.LiteralDoricColumn.T">T</span>, <a href="https://spark.apache.org/docs/2.4.8/api/scala/index.html#org.apache.spark.sql.Row" class="extype" target="_top">Row</a>] is in scope.
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(literalDoricColumn: doric.DStructOps[T]).toJson(options)</pre></div></dd><dt>Definition Classes</dt><dd>DStructOps</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="https://docs.oracle.com/javase/8/docs/api/index.html#java.lang.IllegalArgumentException" class="extype" target="_top"><code>java.lang.IllegalArgumentException</code></a> in the case of an unsupported type.</p></span></dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.to_json(e:org\.apache\.spark\.sql\.Column,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.to_csv</p></span></dd></dl></div>
     </li><li name="doric.syntax.StringColumns.StringOperationsSyntax#unixTimestamp" visbl="pub" data-isabs="false" fullComment="yes" group="String Type">
       <a id="unixTimestamp:doric.LongColumn"></a>
       <a id="unixTimestamp:LongColumn"></a>
