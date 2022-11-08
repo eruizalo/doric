@@ -34,6 +34,11 @@ private[doric] trait ColGetters[F[_]] {
   ): F[T] =
     constructSide(SparkType[T].validate(colName), colName)
 
+  // TODO: hola
+  /**
+    * @todo hola2
+    */
+
   /**
     * The object `row` stands for the top-level row of the DataFrame.
     */
