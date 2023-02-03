@@ -28,7 +28,7 @@ _Maven_
 Doric is committed to use the most modern APIs first.
 <!-- * Doric is compatible with Spark version 3.3.1. -->
 * The latest stable version of doric is 0.0.5.
-* The latest experimental version of doric is 0.0.0+1-f68274d7-SNAPSHOT.
+* The latest experimental version of doric is 0.0.0+1-c781da35-SNAPSHOT.
 * Doric is compatible with the following Spark versions:
 
 | Spark | Scala | Tested |                                                                            doric                                                                             |
@@ -86,8 +86,8 @@ It's only when we try to construct the DataFrame that an exception is raised at 
 ```scala
 df
 // org.apache.spark.sql.AnalysisException: cannot resolve '(value * true)' due to data type mismatch: differing types in '(value * true)' (int and boolean).;
-// 'Project [unresolvedalias((value#257 * true), Some(org.apache.spark.sql.Column$$Lambda$4185/0x0000000101871840@25a2cd5c))]
-// +- LocalRelation [value#257]
+// 'Project [unresolvedalias((value#281 * true), Some(org.apache.spark.sql.Column$$Lambda$4417/0x0000000101966840@5c38cc17))]
+// +- LocalRelation [value#281]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)
 // 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$7(CheckAnalysis.scala:213)
@@ -183,9 +183,9 @@ strDf.select(f.col("str").asDoric[String]).show()
 strDf.select((f.col("str") + f.lit(true)).asDoric[String]).show()
 // doric.sem.DoricMultiError: Found 1 error in select
 //   cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-//   'Project [unresolvedalias((cast(str#270 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4185/0x0000000101871840@25a2cd5c))]
-//   +- Project [value#267 AS str#270]
-//      +- LocalRelation [value#267]
+//   'Project [unresolvedalias((cast(str#294 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4417/0x0000000101966840@5c38cc17))]
+//   +- Project [value#291 AS str#294]
+//      +- LocalRelation [value#291]
 //   
 //   	located at . (quickstart.md:76)
 // 
@@ -197,9 +197,9 @@ strDf.select((f.col("str") + f.lit(true)).asDoric[String]).show()
 // 	at repl.MdocSession$MdocApp$$anonfun$2.apply(quickstart.md:76)
 // 	at repl.MdocSession$MdocApp$$anonfun$2.apply(quickstart.md:76)
 // Caused by: org.apache.spark.sql.AnalysisException: cannot resolve '(CAST(str AS DOUBLE) + true)' due to data type mismatch: differing types in '(CAST(str AS DOUBLE) + true)' (double and boolean).;
-// 'Project [unresolvedalias((cast(str#270 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4185/0x0000000101871840@25a2cd5c))]
-// +- Project [value#267 AS str#270]
-//    +- LocalRelation [value#267]
+// 'Project [unresolvedalias((cast(str#294 as double) + true), Some(org.apache.spark.sql.Column$$Lambda$4417/0x0000000101966840@5c38cc17))]
+// +- Project [value#291 AS str#294]
+//    +- LocalRelation [value#291]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)
 // 	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis$7(CheckAnalysis.scala:213)
