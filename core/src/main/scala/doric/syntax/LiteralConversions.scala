@@ -29,6 +29,8 @@ private[syntax] trait LiteralConversions {
     /**
       * Transforms the original value to a literal.
       *
+      * @group All Types
+      *
       * @return
       * a literal with the same type.
       */

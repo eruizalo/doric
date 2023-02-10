@@ -92,7 +92,7 @@ private[syntax] trait ArrayColumns {
       *
       * @group Array Type
       * @param n
-      * the index of the element to retreave.
+      * the index of the element to retrieve.
       * @return
       * the DoricColumn with the selected element.
       */
