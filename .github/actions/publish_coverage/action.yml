@@ -1,0 +1,37 @@
+name: "Publish coverage to codecov 📊"
+description: "Publish coverage to codecov 📊"
+
+runs:
+  using: "composite"
+  steps:
+
+    - name: Codecov attempt 1
+      id: attempt_1
+      continue-on-error: true
+      uses: codecov/codecov-action@v3.1.1
+      with:
+        files: ./target/scala-2.11/scoverage-report/scoverage.xml,./target/scala-2.12/scoverage-report/scoverage.xml,./target/scala-2.13/scoverage-report/scoverage.xml
+        fail_ci_if_error: true
+        verbose: false
+        flags: 'spark-${{ env.SPARK_VERSION }}.x'
+
+    - name: Codecov attempt 2
+      id: attempt_2
+      if: steps.attempt_1.conclusion == 'failure'
+      continue-on-error: true
+      uses: codecov/codecov-action@v3.1.1
+      with:
+        files: ./target/scala-2.11/scoverage-report/scoverage.xml,./target/scala-2.12/scoverage-report/scoverage.xml,./target/scala-2.13/scoverage-report/scoverage.xml
+        fail_ci_if_error: true
+        verbose: false
+        flags: 'spark-${{ env.SPARK_VERSION }}.x'
+
+    - name: Codecov attempt 3
+      if: steps.attempt_2.conclusion == 'failure'
+      continue-on-error: false
+      uses: codecov/codecov-action@v3.1.1
+      with:
+        files: ./target/scala-2.11/scoverage-report/scoverage.xml,./target/scala-2.12/scoverage-report/scoverage.xml,./target/scala-2.13/scoverage-report/scoverage.xml
+        fail_ci_if_error: true
+        verbose: false
+        flags: 'spark-${{ env.SPARK_VERSION }}.x'

@@ -10,36 +10,49 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish-doc:
+  # GENERATE & PUBLISH DOC
+  publish_doc:
     uses: ./.github/workflows/wc_publishSite.yml
     with:
-      scope: "test-uploadReport-uploadDoc"
+      publish: "yes"
 
+  # BUILD, TEST & COVERAGE
+  build_coverage:
+    uses: ./.github/workflows/wc_build.yml
+    with:
+      matrix_filter: "[?isRelease==`release`]"
+
+  # PUBLISH JARS AT MAVEN CENTRAL
   matrix_prep:
+    if: github.repository == 'hablapps/doric'
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.3.0
 
       - id: set-matrix
         uses: JoshuaTheMiller/conditional-build-matrix@v1.0.1
         with:
-          filter: '[?scope==`test-uploadReport`]'
+          filter: "[?isRelease==`release`]"
 
-  # PUBLISH JARS AT MAVEN CENTRAL
   mvn_release:
     if: github.repository == 'hablapps/doric'
-    needs: [ "publish-doc", "matrix_prep" ]
+    needs: [ "matrix_prep", "publish_doc", "build_coverage" ]
     strategy:
-      fail-fast: true
+      max-parallel: 1
+      fail-fast: false
       matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.3.0
 
       # SETUP & CACHE
-      - uses: olafurpg/setup-scala@v13
+      - uses: coursier/setup-action@v1.3.0
+        with:
+          jvm: adopt:8
+          apps: sbt scala scalafmt  # https://github.com/coursier/apps
+
       - name: Coursier cache
         uses: coursier/cache-action@v6
         with:

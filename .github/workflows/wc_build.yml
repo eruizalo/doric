@@ -1,0 +1,116 @@
+name: Reusable - Build & coverage
+
+on:
+  workflow_call:
+    inputs:
+      matrix_filter:
+        required: true
+        type: string
+
+jobs:
+  matrix_prep:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: Read codecov file
+        id: read_codecov_yml
+        uses: pietrobolcato/action-read-yaml@1.0.0
+        with:
+          config: .github/codecov.yml
+
+      - name: Validate releases & codecov file
+        shell: bash
+        env:
+          notify_after_n_builds: steps.read_codecov_yml.outputs.codecov.notify.after_n_builds
+          comment_after_n_builds: steps.read_codecov_yml.outputs.comment.after_n_builds
+        run: |
+          numReleases=$(grep "\"release\"" .github/workflows/matrix_includes.json | wc -l)
+          echo "Number of matrix releases      : $numReleases"
+          echo "Codecov will wait until notify : ${{ env.notify_after_n_builds }}"
+          echo "Codecov will wait until comment: ${{ env.comment_after_n_builds }}"
+          if [[ $numReleases -ne ${{ env.notify_after_n_builds }} ]] || [[ $numReleases -ne ${{ env.comment_after_n_builds }} ]]
+            echo "::error::Codecov config file does not have the same releases as the matrix config file"
+            exit 1
+          fi
+
+      - id: set-matrix
+        uses: JoshuaTheMiller/conditional-build-matrix@v1.0.1
+        with:
+          filter: '${{ inputs.matrix_filter }}'
+
+  build:
+    needs: [ "matrix_prep" ]
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      # SETUP & CACHE
+      - uses: coursier/setup-action@v1.3.0
+        with:
+          jvm: adopt:8
+          apps: sbt scala scalafmt  # https://github.com/coursier/apps
+
+      - uses: coursier/cache-action@v6
+        with:
+          extraKey: "${{ matrix.spark }}"
+
+        # CHECK CODE FORMAT
+      - name: Code Format
+        id: code_format
+        if: contains(matrix.scope, 'test')
+        run: sbt -DsparkVersion=${{ matrix.spark }} scalafmtCheckAll
+        shell: bash
+
+        # TESTING & COVERAGE
+      - name: Test & coverage 📋
+        id: test_coverage
+        if: steps.code_format.conclusion == 'success'
+        run: sbt -DsparkVersion=${{ matrix.spark }} coverage +core/test coverageAggregate
+        shell: bash
+
+      - name: Test Summary
+        id: test_summary
+        if: ${{ success() && steps.test_coverage.conclusion == 'success' || failure() && steps.test_coverage.conclusion == 'failure' }}
+        uses: test-summary/action@v2.1
+        with:
+          paths: "./core/target/test-reports/**/TEST-*.xml"
+          output: "test-summary.md"
+
+      - name: Add 2 GitHub step summary
+        if: ${{ (success() || failure()) && steps.test_summary.conclusion == 'success' }}
+        shell: bash
+        run: cat test-summary.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Add summary link
+        id: add_summary_link
+        if: ${{ (success() || failure()) && steps.test_summary.conclusion == 'success' }}
+        shell: bash
+        run: |
+          img=$(head -1 test-summary.md | perl -pe 's/(<.*?.>).*/$1/')
+          url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo "| ${{ matrix.spark }} | [${img}](${url}) |" > test-summary-${{ matrix.spark }}.md
+          cat -e test-summary-${{ matrix.spark }}.md
+
+      - name: Upload test summary
+        if: ${{ github.event_name == 'pull_request' && ((success() || failure()) && steps.add_summary_link.conclusion == 'success') }}
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: "test-summary-${{ matrix.spark }}.md"
+          path: "test-summary-${{ matrix.spark }}.md"
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Publish coverage to codecov 📊
+        if: contains(matrix.scope, 'uploadReport')
+        uses: ./.github/actions/publish_coverage
+
+        # CLEAN PROJECT BEFORE CACHE
+      - name: Cleaning before cache 🚯
+        if: ${{ always() }}
+        uses: ./.github/actions/clean_cache

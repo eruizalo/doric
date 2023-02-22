@@ -9,6 +9,11 @@ import org.apache.spark.sql.catalyst.expressions._
 
 trait ArrayColumns3x {
 
+  /**
+    * Extension methods for arrays
+    *
+    * @group Array Type
+    */
   implicit class ArrayColumnSyntax3x[T, F[_]: CollectionType](
       private val col: DoricColumn[F[T]]
   ) {

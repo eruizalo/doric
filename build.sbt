@@ -2,14 +2,14 @@ import scala.language.postfixOps
 
 import sbt.Compile
 
-val stableVersion = "0.0.5"
+val stableVersion = "0.0.6"
 
 val sparkDefaultShortVersion = "3.3"
 val spark24Version           = "2.4.8"
 val spark30Version           = "3.0.3"
 val spark31Version           = "3.1.3"
-val spark32Version           = "3.2.2"
-val spark33Version           = "3.3.0"
+val spark32Version           = "3.2.3"
+val spark33Version           = "3.3.2"
 
 val versionRegex      = """^(.*)\.(.*)\.(.*)$""".r
 val versionRegexShort = """^(.*)\.(.*)$""".r
@@ -27,7 +27,7 @@ val parserSparkVersion: String => String = {
   case versionRegex(a, b, c)       => s"$a.$b.$c"
 }
 
-val sparkLong2ShortVersion: String => String = { case versionRegex(a, b, _) =>
+val long2ShortVersion: String => String = { case versionRegex(a, b, _) =>
   s"$a.$b"
 }
 
@@ -118,7 +118,7 @@ lazy val core = project
   .in(file("core"))
   .settings(
     configSpark,
-    name               := "doric_" + sparkLong2ShortVersion(sparkVersion.value),
+    name               := "doric_" + long2ShortVersion(sparkVersion.value),
     run / fork         := true,
     publish / skip     := false,
     publishArtifact    := true,
@@ -128,9 +128,9 @@ lazy val core = project
       "org.apache.spark" %% "spark-sql" % sparkVersion.value % "provided", // scala-steward:off
       "org.typelevel" %% "cats-core"  % catsVersion(sparkVersion.value),
       "com.lihaoyi"   %% "sourcecode" % "0.3.0",
-      "com.chuusai"   %% "shapeless"  % "2.3.9",
+      "com.chuusai"   %% "shapeless"  % "2.3.10",
       "com.github.mrpowers" %% "spark-fast-tests" % "1.3.0"  % "test",
-      "org.scalatest"       %% "scalatest"        % "3.2.13" % "test"
+      "org.scalatest"       %% "scalatest"        % "3.2.15" % "test"
     ),
     // docs
     run / fork                      := true,
@@ -193,9 +193,14 @@ lazy val docs = project
       "org.apache.spark" %% "spark-sql" % sparkVersion.value
     ),
     mdocVariables := Map(
+      // VERSION is not working well? 0.0.0+1-6f46b6de-SNAPSHOT
+      //                              ^^^^^
       "VERSION"        -> version.value,
       "STABLE_VERSION" -> stableVersion,
-      "SPARK_VERSION"  -> sparkVersion.value
+      "SPARK_VERSION"  -> sparkVersion.value,
+      "SPARK_SHORT_VERSION" -> long2ShortVersion(sparkVersion.value)
+        .replace(".", "-"),
+      "SCALA_SHORT_VERSION" -> long2ShortVersion(scalaVersion.value)
     ),
     mdocExtraArguments := Seq(
       "--clean-target"
