@@ -15,6 +15,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
 
+      - name: Read codecov file
+        id: read_codecov_yml
+        uses: pietrobolcato/action-read-yaml@1.0.0
+        with:
+          config: .github/codecov.yml
+
+      - name: Validate releases & codecov file
+        shell: bash
+        env:
+          notify_after_n_builds: steps.read_codecov_yml.outputs.codecov.notify.after_n_builds
+          comment_after_n_builds: steps.read_codecov_yml.outputs.comment.after_n_builds
+        run: |
+          numReleases=$(grep "\"release\"" .github/workflows/matrix_includes.json | wc -l)
+          echo "Number of matrix releases      : $numReleases"
+          echo "Codecov will wait until notify : ${{ env.notify_after_n_builds }}"
+          echo "Codecov will wait until comment: ${{ env.comment_after_n_builds }}"
+          if [[ $numReleases -ne ${{ env.notify_after_n_builds }} ]] || [[ $numReleases -ne ${{ env.comment_after_n_builds }} ]]
+            echo "::error::Codecov config file does not have the same releases as the matrix config file"
+            exit 1
+          fi
+
       - id: set-matrix
         uses: JoshuaTheMiller/conditional-build-matrix@v1.0.1
         with:
