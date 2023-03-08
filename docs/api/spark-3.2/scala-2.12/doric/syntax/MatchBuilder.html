@@ -111,10 +111,6 @@
                         <a href="ArrayColumns3x.html" title="">ArrayColumns3x</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="BuildersCommons.html" title=""></a>
-                        <a href="BuildersCommons.html" title="">BuildersCommons</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
                         <a class="trait" href="CNameOps.html" title=""></a>
                         <a href="CNameOps.html" title="">CNameOps</a>
                       </li><li class="current-entities indented2">
@@ -137,10 +133,6 @@
                         <span class="separator"></span>
                         <a class="class" href="" title=""></a>
                         <a href="" title="">MatchBuilder</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
-                        <a class="class" href="MatchBuilderInit.html" title=""></a>
-                        <a href="MatchBuilderInit.html" title="">MatchBuilderInit</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="NumWithDecimalsType$.html" title=""></a>
                         <a class="trait" href="NumWithDecimalsType.html" title=""></a>
@@ -180,7 +172,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">MatchBuilder</span><span class="tparams">[<span name="O">O</span>, <span name="T">T</span>]</span><span class="params">(<span name="dCol">dCol: <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>, <span name="cases">cases: <a href="http://typelevel.org/cats/api/cats/data/NonEmptyVector.html#cats.data.NonEmptyVector" class="extype" name="cats.data.NonEmptyVector">NonEmptyVector</a>[(<a href="../index.html#BooleanColumn=doric.DoricColumn[Boolean]" class="extmbr" name="doric.BooleanColumn">BooleanColumn</a>, <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.T">T</span>])]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$2">evidence$2: <a href="../types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>)</span><span class="result"> extends <a href="BuildersCommons.html" class="extype" name="doric.syntax.BuildersCommons">BuildersCommons</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span class="name">MatchBuilder</span><span class="tparams">[<span name="O">O</span>, <span name="T">T</span>]</span><span class="params">(<span name="dCol">dCol: <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>, <span name="cases">cases: <span class="extype" name="doric.syntax.WhenBuilder">WhenBuilder</span>[<span class="extype" name="doric.syntax.MatchBuilder.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$1">evidence$1: <a href="../types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>)</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
@@ -189,7 +181,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="BuildersCommons.html" class="extype" name="doric.syntax.BuildersCommons">BuildersCommons</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div></div>
         
 
@@ -215,7 +207,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="doric.syntax.MatchBuilder"><span>MatchBuilder</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="doric.syntax.BuildersCommons"><span>BuildersCommons</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="doric.syntax.MatchBuilder"><span>MatchBuilder</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
                   <span class="filtertype">Implicitly<br />
@@ -241,9 +233,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="doric.syntax.MatchBuilder#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(dCol:doric.DoricColumn[O],cases:cats.data.NonEmptyVector[(doric.BooleanColumn,doric.DoricColumn[T])])(implicitevidence$2:doric.types.SparkType[O]):doric.syntax.MatchBuilder[O,T]"></a><a id="&lt;init&gt;:MatchBuilder[O,T]"></a>
+      <a id="&lt;init&gt;(dCol:doric.DoricColumn[O],cases:doric.syntax.WhenBuilder[T])(implicitevidence$1:doric.types.SparkType[O]):doric.syntax.MatchBuilder[O,T]"></a><a id="&lt;init&gt;:MatchBuilder[O,T]"></a>
       <span class="permalink">
-      <a href="../../doric/syntax/MatchBuilder.html#&lt;init&gt;(dCol:doric.DoricColumn[O],cases:cats.data.NonEmptyVector[(doric.BooleanColumn,doric.DoricColumn[T])])(implicitevidence$2:doric.types.SparkType[O]):doric.syntax.MatchBuilder[O,T]" title="Permalink">
+      <a href="../../doric/syntax/MatchBuilder.html#&lt;init&gt;(dCol:doric.DoricColumn[O],cases:doric.syntax.WhenBuilder[T])(implicitevidence$1:doric.types.SparkType[O]):doric.syntax.MatchBuilder[O,T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -252,7 +244,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">MatchBuilder</span><span class="params">(<span name="dCol">dCol: <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>, <span name="cases">cases: <a href="http://typelevel.org/cats/api/cats/data/NonEmptyVector.html#cats.data.NonEmptyVector" class="extype" name="cats.data.NonEmptyVector">NonEmptyVector</a>[(<a href="../index.html#BooleanColumn=doric.DoricColumn[Boolean]" class="extmbr" name="doric.BooleanColumn">BooleanColumn</a>, <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.T">T</span>])]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="../types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>)</span>
+        <span class="name">MatchBuilder</span><span class="params">(<span name="dCol">dCol: <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>, <span name="cases">cases: <span class="extype" name="doric.syntax.WhenBuilder">WhenBuilder</span>[<span class="extype" name="doric.syntax.MatchBuilder.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="../types/SparkType.html" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.syntax.MatchBuilder.O">O</span>]</span>)</span>
       </span>
       
       
@@ -415,22 +407,6 @@ new instance of the builder with the previous cases added</p></dd></dl></div>
 the given column to compare</p></dd><dt class="param">elem</dt><dd class="cmt"><p>
 the returned element if the condition is true</p></dd><dt>returns</dt><dd class="cmt"><p>
 new instance of the builder with the previous cases added</p></dd></dl></div>
-    </li><li name="doric.syntax.BuildersCommons#casesToWhenColumn" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="casesToWhenColumn[T](cases:cats.data.NonEmptyVector[(doric.BooleanColumn,doric.DoricColumn[T])]):doric.Doric[org.apache.spark.sql.Column]"></a><a id="casesToWhenColumn[T](NonEmptyVector[(BooleanColumn,DoricColumn[T])]):Doric[Column]"></a>
-      <span class="permalink">
-      <a href="../../doric/syntax/MatchBuilder.html#casesToWhenColumn[T](cases:cats.data.NonEmptyVector[(doric.BooleanColumn,doric.DoricColumn[T])]):doric.Doric[org.apache.spark.sql.Column]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">casesToWhenColumn</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="cases">cases: <a href="http://typelevel.org/cats/api/cats/data/NonEmptyVector.html#cats.data.NonEmptyVector" class="extype" name="cats.data.NonEmptyVector">NonEmptyVector</a>[(<a href="../index.html#BooleanColumn=doric.DoricColumn[Boolean]" class="extmbr" name="doric.BooleanColumn">BooleanColumn</a>, <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<span class="extype" name="doric.syntax.BuildersCommons.casesToWhenColumn.T">T</span>])]</span>)</span><span class="result">: <a href="../index.html#Doric[T]=cats.data.Kleisli[doric.package.DoricValidated,org.apache.spark.sql.Dataset[_],T]" class="extmbr" name="doric.Doric">Doric</a>[<a href="https://spark.apache.org/docs/3.2.3/api/scala/org/apache/spark/sql/Column.html#org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.Column">Column</a>]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="BuildersCommons.html" class="extype" name="doric.syntax.BuildersCommons">BuildersCommons</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -870,8 +846,6 @@ a literal with the same type.</p></dd></dl><dl class="attributes block"> <dt cla
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a></h3>
-            </div><div class="parent" name="doric.syntax.BuildersCommons">
-              <h3>Inherited from <a href="BuildersCommons.html" class="extype" name="doric.syntax.BuildersCommons">BuildersCommons</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.15/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
