@@ -101,7 +101,7 @@ val sparkCol = f.expr("array_sort(value, (l, r) -> case " +
 
 val doricCol = colArray[Row]("value").sortBy(CName("name"), CNameOrd("age", Desc))
 // doricCol: ArrayColumn[Row] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$2909/0x00000001012ed840@3d72abea)
+//   Kleisli(cats.data.Kleisli$$Lambda$2909/0x00000001012ed840@6bbff652)
 // )
 
 dfArrayStruct.select(sparkCol.as("sorted")).show(false)
