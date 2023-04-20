@@ -15,7 +15,7 @@ raising a run-time exception:
 // Spark
 List(1,2,3).toDF().select(f.col("id")+1)
 // org.apache.spark.sql.AnalysisException: Column 'id' does not exist. Did you mean one of the following? [value];
-// 'Project [unresolvedalias(('id + 1), Some(org.apache.spark.sql.Column$$Lambda$4948/0x0000000101b0e840@7a1bae4d))]
+// 'Project [unresolvedalias(('id + 1), Some(org.apache.spark.sql.Column$$Lambda$4915/0x0000000101afb040@2e277252))]
 // +- LocalRelation [value#357]
 // 
 // 	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:54)
