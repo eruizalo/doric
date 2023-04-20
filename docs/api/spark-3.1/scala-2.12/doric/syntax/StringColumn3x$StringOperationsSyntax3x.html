@@ -518,10 +518,10 @@
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="doric.syntax.StringColumn3x.StringOperationsSyntax3x#fromCsv" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="String Type">
-      <a id="fromCsv(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn"></a><a id="fromCsv(StringColumn,Map[String,String]):RowColumn"></a>
+    </li><li name="doric.syntax.StringColumn3x.StringOperationsSyntax3x#fromCsvString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="String Type">
+      <a id="fromCsvString(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn"></a><a id="fromCsvString(StringColumn,Map[String,String]):RowColumn"></a>
       <span class="permalink">
-      <a href="../../doric/syntax/StringColumn3x$StringOperationsSyntax3x.html#fromCsv(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn" title="Permalink">
+      <a href="../../doric/syntax/StringColumn3x$StringOperationsSyntax3x.html#fromCsvString(schema:doric.StringColumn,options:Map[String,String]):doric.RowColumn" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -530,15 +530,15 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fromCsv</span><span class="params">(<span name="schema">schema: <a href="../index.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="../index.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
+        <span class="name">fromCsvString</span><span class="params">(<span name="schema">schema: <a href="../index.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="../index.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
       </span>
       
       <p class="shortcomment cmt">Parses a column containing a CSV string into a StructType with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a column containing a CSV string into a StructType with the specified schema.
 </p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Returns null, in the case of an unparseable string.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/3.1.3/api/scala/org/apache/spark/sql/functions$.html#from_csv(e:org.apache.spark.sql.Column,schema:org.apache.spark.sql.Column,options:java.util.Map[String,String]):org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.functions">org.apache.spark.sql.functions.from_csv</a></p></span></dd></dl></div>
-    </li><li name="doric.syntax.StringColumn3x.StringOperationsSyntax3x#fromCsv2" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="String Type">
-      <a id="fromCsv2(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn"></a><a id="fromCsv2(StructType,Map[String,String]):RowColumn"></a>
+    </li><li name="doric.syntax.StringColumn3x.StringOperationsSyntax3x#fromCsvStruct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="String Type">
+      <a id="fromCsvStruct(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn"></a><a id="fromCsvStruct(StructType,Map[String,String]):RowColumn"></a>
       <span class="permalink">
-      <a href="../../doric/syntax/StringColumn3x$StringOperationsSyntax3x.html#fromCsv2(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn" title="Permalink">
+      <a href="../../doric/syntax/StringColumn3x$StringOperationsSyntax3x.html#fromCsvStruct(schema:org.apache.spark.sql.types.StructType,options:Map[String,String]):doric.RowColumn" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -547,7 +547,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fromCsv2</span><span class="params">(<span name="schema">schema: <a href="https://spark.apache.org/docs/3.1.3/api/scala/org/apache/spark/sql/types/StructType.html#org.apache.spark.sql.types.StructType" class="extype" name="org.apache.spark.sql.types.StructType">StructType</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="../index.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
+        <span class="name">fromCsvStruct</span><span class="params">(<span name="schema">schema: <a href="https://spark.apache.org/docs/3.1.3/api/scala/org/apache/spark/sql/types/StructType.html#org.apache.spark.sql.types.StructType" class="extype" name="org.apache.spark.sql.types.StructType">StructType</a></span>, <span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="../index.html#RowColumn=doric.DoricColumn[org.apache.spark.sql.Row]" class="extmbr" name="doric.RowColumn">RowColumn</a></span>
       </span>
       
       <p class="shortcomment cmt">Parses a column containing a CSV string into a StructType with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a column containing a CSV string into a StructType with the specified schema.
