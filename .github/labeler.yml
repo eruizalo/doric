@@ -1,6 +1,6 @@
 CI/CD:
   - changed-files:
-    - any-glob-to-any-file: [ '.github/**/*.yml' ]
+    - any-glob-to-any-file: [ '.github/**/*.yml' ] 
 
 dependencies:
   - changed-files:

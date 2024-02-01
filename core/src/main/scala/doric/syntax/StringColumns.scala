@@ -442,7 +442,9 @@ protected trait StringColumns {
         .toDC
 
     /**
-      * SQL RLIKE expression (LIKE with Regex). Returns a boolean column based
+      * SQL RLIKE expression (LIKE with Regex).
+      *
+      * Returns a boolean column based
       * on a regex match.
       *
       * @group String Type
