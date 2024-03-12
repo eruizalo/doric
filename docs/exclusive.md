@@ -103,21 +103,21 @@ val sparkCol = f.expr("array_sort(value, (l, r) -> case " +
 
 val doricCol = colArray[Row]("value").sortBy(CName("name"), CNameOrd("age", Desc))
 // doricCol: ArrayColumn[Row] = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$2999/0x000000080133e840@43a2b00c)
+//   Kleisli(scala.Function1$$Lambda$3033/0x000000080137d040@bfd7235)
 // )
 
 dfArrayStruct.select(sparkCol.as("sorted")).show(false)
 // +-----------------------------------------------------------------------------------------------------------------+
 // |sorted                                                                                                           |
 // +-----------------------------------------------------------------------------------------------------------------+
-// |[{Gandalf, grey, 2000}, {Gandalf, white, 2}, {Terminator, T-800, 80}, {Terminator, T-1000, 1}, {Yoda, null, 900}]|
+// |[{Gandalf, grey, 2000}, {Gandalf, white, 2}, {Terminator, T-800, 80}, {Terminator, T-1000, 1}, {Yoda, NULL, 900}]|
 // +-----------------------------------------------------------------------------------------------------------------+
 // 
 dfArrayStruct.select(doricCol.as("sorted")).show(false)
 // +-----------------------------------------------------------------------------------------------------------------+
 // |sorted                                                                                                           |
 // +-----------------------------------------------------------------------------------------------------------------+
-// |[{Gandalf, grey, 2000}, {Gandalf, white, 2}, {Terminator, T-800, 80}, {Terminator, T-1000, 1}, {Yoda, null, 900}]|
+// |[{Gandalf, grey, 2000}, {Gandalf, white, 2}, {Terminator, T-800, 80}, {Terminator, T-1000, 1}, {Yoda, NULL, 900}]|
 // +-----------------------------------------------------------------------------------------------------------------+
 //
 ```
@@ -151,7 +151,7 @@ val mapColDoric = colString("value").matches[String]
   .caseW(_.length > 4, "error key".lit)
   .otherwiseNull
 // mapColDoric: DoricColumn[String] = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$2999/0x000000080133e840@7b74883)
+//   Kleisli(scala.Function1$$Lambda$3033/0x000000080137d040@28debadc)
 // )
 
 dfMatch.withColumn("mapResult", mapColDoric).show()
@@ -160,7 +160,7 @@ dfMatch.withColumn("mapResult", mapColDoric).show()
 // +-----------+---------+
 // |       key1|  result1|
 // |       key2|  result2|
-// |       key3|     null|
+// |       key3|     NULL|
 // |anotherKey1|error key|
 // |anotherKey2|error key|
 // +-----------+---------+
@@ -217,7 +217,7 @@ dfArray.show(false)
 // +--------------------------------+
 // |[{0, a}, {1, b}, {2, c}, {3, d}]|
 // |[]                              |
-// |null                            |
+// |NULL                            |
 // +--------------------------------+
 //
 ```
@@ -247,7 +247,7 @@ dfMap.show(false)
 // +----------------+
 // |[{a, b}, {c, d}]|
 // |[]              |
-// |null            |
+// |NULL            |
 // +----------------+
 //
 ```
