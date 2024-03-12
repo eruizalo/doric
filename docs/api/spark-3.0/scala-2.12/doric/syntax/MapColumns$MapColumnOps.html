@@ -360,6 +360,8 @@
               
                 <span class="name">@native</span><span class="args">()</span>
               
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
         </dd></dl></div>
     </li><li name="doric.syntax.MapColumns.MapColumnOps#elementAt" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Map Type">
       <a id="elementAt(key:doric.DoricColumn[K]):doric.DoricColumn[V]"></a><a id="elementAt(DoricColumn[K]):DoricColumn[V]"></a>
@@ -542,28 +544,6 @@
 +---+----------------+   |<span class="num">3</span>  |<span class="kw">null</span>|<span class="kw">null</span> |  |<span class="num">3</span>  |<span class="kw">null</span>  |
                          +---+----+-----+  +---+------+</pre></li></ol>
             </div><dt>Note</dt><dd><span class="cmt"><p>Unlike explode, if the array is null or empty then null is produced.</p></span>, <span class="cmt"><p>WARNING: Unlike spark, doric returns a struct</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/3.0.3/api/scala/org/apache/spark/sql/functions$.html#explode_outer(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.functions">org.apache.spark.sql.functions.explode_outer</a></p></span></dd></dl></div>
-    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../doric/syntax/MapColumns$MapColumnOps.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.18/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd></dl></div>
     </li><li name="doric.syntax.MapColumns.MapColumnOps#get" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Map Type">
       <a id="get(key:doric.DoricColumn[K]):doric.DoricColumn[V]"></a><a id="get(DoricColumn[K]):DoricColumn[V]"></a>
       <span class="permalink">
@@ -597,11 +577,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -621,6 +603,8 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -716,6 +700,8 @@ a literal with the same type.</p></dd></dl><dl class="attributes block"> <dt cla
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -734,6 +720,8 @@ a literal with the same type.</p></dd></dl><dl class="attributes block"> <dt cla
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="doric.syntax.MapColumns.MapColumnOps#posExplode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Map Type">
@@ -857,7 +845,7 @@ With the default settings, the function returns -1 for null input.
         <span class="name">toJson</span><span class="params">(<span name="options">options: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="../index.html#StringColumn=doric.DoricColumn[String]" class="extmbr" name="doric.StringColumn">StringColumn</a></span>
       </span>
       
-      <p class="shortcomment cmt">Converts a column containing a StructType into a JSON string with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a column containing a StructType into a JSON string with the specified schema.</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" class="extype" name="java.lang.IllegalArgumentException"><code>java.lang.IllegalArgumentException</code></a> in the case of an unsupported type.</p></span></dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.to_json(e:org\.apache\.spark\.sql\.Column,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.to_csv</p></span></dd></dl></div>
+      <p class="shortcomment cmt">Converts a column containing a StructType into a JSON string with the specified schema.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a column containing a StructType into a JSON string with the specified schema.</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html" class="extype" name="java.lang.IllegalArgumentException"><code>java.lang.IllegalArgumentException</code></a> in the case of an unsupported type.</p></span></dd><dt>To do</dt><dd><span class="cmt"><p>scaladoc link (issue #135)</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>org.apache.spark.sql.functions.to_json(e:org\.apache\.spark\.sql\.Column,options:scala\.collection\.immutable\.Map\[java\.lang\.String,java\.lang\.String\]):* org.apache.spark.sql.functions.to_csv</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
@@ -870,7 +858,7 @@ With the default settings, the function returns -1 for null input.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -892,28 +880,6 @@ With the default settings, the function returns -1 for null input.
       <p class="shortcomment cmt">Returns an unordered array containing the values of the map.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an unordered array containing the values of the map.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
   the DoricColumn of the Array of values</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://spark.apache.org/docs/3.0.3/api/scala/org/apache/spark/sql/functions$.html#map_values(e:org.apache.spark.sql.Column):org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.functions">org.apache.spark.sql.functions.map_values</a></p></span></dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wait():Unit"></a>
-      <span class="permalink">
-      <a href="../../doric/syntax/MapColumns$MapColumnOps.html#wait():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.18/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
-    </span>)</span>
-              
-        </dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
@@ -960,6 +926,28 @@ With the default settings, the function returns -1 for null input.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../doric/syntax/MapColumns$MapColumnOps.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.18/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a><a id="→[B](B):(MapColumnOps[K,V],B)"></a>
       <span class="permalink">
@@ -988,7 +976,31 @@ With the default settings, the function returns -1 for null input.
 
         <div class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.Predef.StringFormat#formatted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../doric/syntax/MapColumns$MapColumnOps.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: ">finalize</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.18/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+                <span class="name">@Deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="formatted(fmtstr:String):String"></a><a id="formatted(String):String"></a>
       <span class="permalink">
       <a href="../../doric/syntax/MapColumns$MapColumnOps.html#formatted(fmtstr:String):String" title="Permalink">
